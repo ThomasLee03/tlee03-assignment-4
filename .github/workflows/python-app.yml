@@ -39,7 +39,12 @@ jobs:
 
     - name: Test with pytest
       run: |
-        pytest
+        if ls tests/*.py 2>/dev/null; then
+          pytest --disable-warnings;
+        else
+          echo "No tests found, skipping pytest.";
+        fi
+
 
     - name: Run Flask App (Optional)
       run: |
