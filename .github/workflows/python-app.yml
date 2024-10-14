@@ -32,7 +32,7 @@ jobs:
     - name: Run Flask app with Makefile
       run: |
         make run &  # Run the server in the background
-        sleep 10  # Allow time for the server to start
+        sleep 120  # Allow time for the server to start
 
     # Step 5: Check if the server is running
     - name: Test server is running
